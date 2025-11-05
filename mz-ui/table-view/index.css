@@ -1,0 +1,23 @@
+.op_btns {
+  display: flex;
+}
+
+.op_btn {
+  margin: 0 16px 0 0;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #108ee9;
+}
+
+.mz_table_box{
+  flex: 1;
+  height: 0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.op_btn_disabled{
+  color: #999999;
+  cursor: not-allowed;
+}

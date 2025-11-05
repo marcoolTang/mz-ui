@@ -1,0 +1,21 @@
+.mz_container {
+    flex: 1;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.content_table {
+    flex: 1;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_view_btns {
+    display: flex;
+    background-color: #ffffff;
+    padding: 16px 0 0 12px;
+    flex: none;
+}
