@@ -3,9 +3,12 @@
 MzFormControl 是一个强大的表单控制组件,支持多种表单项类型和验证。
 
 <script setup>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
-
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
 const formRef = ref(null)
 
 const formColumns = [
@@ -69,7 +72,7 @@ const submitForm = async () => {
 }
 </script>
 
-<div style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);">
+<div v-if="isClient" style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);">
   <mz-form-control ref="formRef" />
   <div style="margin-top: 20px; display: flex; gap: 10px;">
     <el-button type="primary" @click="initForm">初始化表单</el-button>
@@ -81,19 +84,22 @@ const submitForm = async () => {
 
 ```vue
 <template>
-  <div>
-    <mz-form-control ref="formRef" />
-    <el-button type="primary" @click="initForm">初始化表单</el-button>
-    <el-button @click="submitForm">提交表单</el-button>
-  </div>
+    <div v-if="isClient">
+        <mz-form-control ref="formRef" />
+        <el-button type="primary" @click="initForm">初始化表单</el-button>
+        <el-button @click="submitForm">提交表单</el-button>
+    </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref，onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 
 const formRef = ref(null)
-
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
 const formColumns = [
   {
     label: '用户名',

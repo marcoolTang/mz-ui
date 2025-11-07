@@ -27,11 +27,24 @@ const install = (app: App): void => {
 };
 
 // 导出插件
-export default {
+const MzUI = {
     install,
+    version: '1.0.1',
 };
 
-// 支持 CDN 引入
-if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue);
-}
+export default MzUI;
+
+// ✅ SSR 完全安全的 CDN 支持
+// 使用 IIFE 确保只在浏览器环境执行
+(function () {
+    if (typeof window === 'undefined') return;
+
+    try {
+        const win = window as any;
+        if (win.Vue && typeof win.Vue.use === 'function') {
+            win.Vue.use(MzUI);
+        }
+    } catch (e) {
+        // 忽略错误，确保 SSR 不会崩溃
+    }
+})();

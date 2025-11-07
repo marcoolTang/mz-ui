@@ -1,6 +1,6 @@
 {
     "name": "ezmui",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "A Vue 3 Component Library based on Element Plus",
     "main": "dist/mz-ui.umd.js",
     "module": "dist/mz-ui.es.js",
@@ -59,7 +59,6 @@
         "pinia": "^2.1.0",
         "axios": "^1.6.0",
         "js-file-download": "^0.4.12",
-        "js-md5": "^0.8.3",
         "vue-to-print": "^1.5.1"
     },
     "devDependencies": {

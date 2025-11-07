@@ -3,11 +3,14 @@
 这是一个完整的组件库使用示例,展示了所有主要组件的使用方法。
 
 <script setup>
-import { ref, h } from 'vue'
+import { ref, h,onMounted } from 'vue'
 import { ElMessage, ElTag } from 'element-plus'
 
 const activeName = ref('table')
-
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
 // 表格数据
 const tableColumns = ref([
   {
@@ -62,7 +65,7 @@ const handleOperation = (type, row) => {
       <h1 style="margin: 0 0 10px 0; font-size: 32px; font-weight: 600;">MZ UI 组件库示例</h1>
       <p style="margin: 0; font-size: 16px; opacity: 0.9;">基于 Vue 3 + Element Plus 的企业级组件库</p>
     </div>
-        <div style="padding: 20px; background: #fff; border-radius: 8px; min-height: 400px;">
+        <div v-if="isClient" style="padding: 20px; background: #fff; border-radius: 8px; min-height: 400px;">
           <h2 style="margin-top: 0; margin-bottom: 20px; color: #333; border-bottom: 2px solid #409eff; padding-bottom: 10px; font-size: 20px;">MzTableView 示例</h2>
           <mz-table-view 
             :columns="tableColumns" 

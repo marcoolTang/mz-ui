@@ -5,7 +5,12 @@ export default defineConfig({
     title: 'MZ-UI 组件库',
     description: '基于 Vue3 + Element Plus 的后台管理系统组件库',
     base: '/',
-
+    vite: {
+        ssr: {
+            // ✅ 告诉 Vite SSR 构建时不要 external 掉你的库
+            external: ['element-plus', 'ezmui'],
+        },
+    },
     // Head 配置
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],

@@ -37,7 +37,6 @@
 import { ref, nextTick } from 'vue'
 import components from './components'
 import { staticDictionary } from '../static-dictionary';
-import { array } from 'js-md5';
 import { useVueToPrint } from "vue-to-print";
 import { template } from 'lodash';
 defineOptions({

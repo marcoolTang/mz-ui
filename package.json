@@ -16,7 +16,7 @@
     ],
     "dependencies": {
         "element-plus": "^2.8.8",
-        "ezmui": "^1.0.2",
+        "ezmui": "^1.0.4",
         "vue": "^3.5.13"
     },
     "devDependencies": {

@@ -3,9 +3,12 @@
 MzSearchTree 是一个带搜索功能的树形组件。
 
 <script setup>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
-
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
 const treeData = ref([
   {
     id: 1,
@@ -33,7 +36,7 @@ const handleTreeSelect = (dictType, dictName) => {
 }
 </script>
 
-<div style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); min-height: 400px;">
+<div v-if="isClient" style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); min-height: 400px;">
   <mz-search-tree 
     :tree-data="treeData" 
     node-key="id" 
@@ -46,31 +49,26 @@ const handleTreeSelect = (dictType, dictName) => {
 
 ```vue
 <template>
-  <mz-search-tree 
-    :tree-data="treeData" 
-    node-key="id" 
-    search-placeholder="搜索节点"
-    @tree-select-change="handleTreeSelect" 
-  />
+    <mz-search-tree :tree-data="treeData" node-key="id" search-placeholder="搜索节点" @tree-select-change="handleTreeSelect" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const treeData = ref([
-  {
-    id: 1,
-    dictName: '一级节点',
-    dictType: 'type1',
-    children: [
-      { id: 2, dictName: '二级节点 1', dictType: 'type2' },
-      { id: 3, dictName: '二级节点 2', dictType: 'type3' }
-    ]
-  }
-])
+    {
+        id: 1,
+        dictName: '一级节点',
+        dictType: 'type1',
+        children: [
+            { id: 2, dictName: '二级节点 1', dictType: 'type2' },
+            { id: 3, dictName: '二级节点 2', dictType: 'type3' },
+        ],
+    },
+]);
 
 const handleTreeSelect = (dictType, dictName) => {
-  console.log('选中:', dictType, dictName)
-}
+    console.log('选中:', dictType, dictName);
+};
 </script>
 ```

@@ -3,7 +3,7 @@
 MzContainerView 是一个集成了筛选、表格、表单的综合容器组件,适用于标准 CRUD 场景。
 
 <script setup>
-import { ref, h } from 'vue'
+import { ref, h ,onMounted} from 'vue'
 import { ElMessage, ElTag } from 'element-plus'
 
 const tableData = ref([
@@ -92,9 +92,13 @@ const handleOperation = (type, row) => {
   ElMessage.info(`执行 ${type} 操作`)
   console.log('容器操作:', { type, row })
 }
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
 </script>
 
-<div style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); height: 700px;">
+<div v-if="isClient" style="padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); height: 700px;">
   <mz-container-view 
     :columns="config.columns"
     :row-btns="['update', 'delete']"
