@@ -13,20 +13,21 @@ export const dictionaryOptions = (arr) => {
 };
 
 // 加载所有异步选项
-const loadOptions = async (columns) => {
-    const promises = columns.flatMap((item) =>
-        item.items
+const loadOptions = async (columns = []) => {
+    const promises = columns.flatMap((item) => {
+        if (!item || !Array.isArray(item.items)) return [];
+        return item.items
             .filter((i) => (i.type === 'select-tree' || i.type === 'select') && i.serviceUrl)
             .map(async (i) => {
                 try {
-                    const data = await http.get(i.serviceUrl);
+                    const { data } = await http.get(i.serviceUrl);
                     i.options = i.filter ? i.filter(data) : data.data;
                 } catch (error) {
                     console.error(`加载 ${i.label} 选项失败:`, error);
                     i.options = [];
                 }
-            })
-    );
+            });
+    });
 
     await Promise.all(promises);
 };

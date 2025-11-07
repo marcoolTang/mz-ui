@@ -1,6 +1,6 @@
 {
     "name": "ezmui",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Vue 3 Component Library based on Element Plus",
     "main": "dist/mz-ui.umd.js",
     "module": "dist/mz-ui.es.js",
@@ -52,25 +52,26 @@
     "author": "Marco Tang<tzzwpqwe@vip.qq.com>",
     "license": "MIT",
     "peerDependencies": {
-        "element-plus": "^2.4.0",
         "vue": "^3.3.0"
+    },
+    "dependencies": {
+        "element-plus": "^2.4.0",
+        "pinia": "^2.1.0",
+        "axios": "^1.6.0",
+        "js-file-download": "^0.4.12",
+        "js-md5": "^0.8.3",
+        "vue-to-print": "^1.5.1"
     },
     "devDependencies": {
         "@element-plus/icons-vue": "^2.3.1",
         "@vitejs/plugin-vue": "^4.5.0",
         "element-plus": "^2.4.4",
-        "pinia": "^3.0.4",
+        "pinia": "^2.1.0",
         "sass": "^1.69.5",
         "typescript": "^5.3.3",
         "vite": "^5.0.0",
         "vue": "^3.3.11",
         "vue-router": "^4.6.3",
         "vue-tsc": "^1.8.27"
-    },
-    "dependencies": {
-        "axios": "^1.6.2",
-        "js-file-download": "^0.4.12",
-        "js-md5": "^0.8.3",
-        "vue-to-print": "^1.5.1"
     }
 }

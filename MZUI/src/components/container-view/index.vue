@@ -27,6 +27,7 @@ import detailView from '@mz-detail-view'
 import { columnsHandle, staticColumsHandle } from './data-handle'
 import { onMounted, ref, onActivated, nextTick, computed, watch } from 'vue'
 import { http } from '@http'
+import { ElMessage } from "element-plus"
 defineOptions({
   name: 'MzContainerView'
 })
