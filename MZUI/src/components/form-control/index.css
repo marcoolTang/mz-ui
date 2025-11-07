@@ -1,0 +1,61 @@
+.static_data_box {
+  box-shadow: 0 0 0 1px #e4e7ed inset;
+  background-color: #f5f7fa;
+  border-radius: 4px;
+  padding: 1px 11px;
+  display: inline-flex;
+  flex-grow: 1
+}
+
+.check_tree {
+  box-shadow: 0 0 0 1px #e4e7ed inset;
+  display: inline-flex;
+  flex-grow: 1;
+}
+
+.icons_element_select {
+  display: flex;
+}
+
+.form_table {
+  width: 100%;
+}
+
+.formtable_item {
+  display: flex;
+  padding: 6px 5px;
+  box-sizing: border-box;
+}
+
+.input {
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+.icon_del{
+  background-image: var(--formtable_item_del);
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  background-position: center;
+  flex: none;
+  cursor: pointer;
+  margin: 0 0 0 6px;
+}
+
+.icon_add{
+  background-image: var(--formtable_item_add);
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  background-position: center;
+  flex: none;
+  cursor: pointer;
+  margin: 0 0 0 6px;
+}
+
+.required{
+  color: red;
+  margin-right: 4px;
+}

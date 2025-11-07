@@ -1,0 +1,21 @@
+# 源代码
+src/
+examples/
+
+# 配置文件
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+.gitignore
+
+# 开发文件
+index.html
+*.log
+
+# IDE
+.vscode
+.idea
+
+# 其他
+node_modules
+.DS_Store

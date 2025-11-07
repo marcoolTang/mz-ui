@@ -1,0 +1,11 @@
+.search_tree{
+  width: 240px;
+  background-color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 16px 0px 16px 8px ;
+}
+
+.filter-tree{
+  margin-top: 16px;
+}
