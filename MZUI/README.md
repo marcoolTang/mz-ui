@@ -4,21 +4,21 @@
 
 ## ✨ 特性
 
-- 🚀 基于 Vue 3 Composition API
-- 💎 集成 Element Plus，UI 统一美观
-- 📦 开箱即用的业务组件
-- 🎯 TypeScript 支持
-- 🌍 支持按需引入
-- 📱 响应式设计
+-   🚀 基于 Vue 3 Composition API
+-   💎 集成 Element Plus，UI 统一美观
+-   📦 开箱即用的业务组件
+-   🎯 TypeScript 支持
+-   🌍 支持按需引入
+-   📱 响应式设计
 
 ## 📦 安装
 
 ```bash
-npm install @mzui/components
+npm install ezmui
 # 或
-yarn add @mzui/components
+yarn add ezmui
 # 或
-pnpm add @mzui/components
+pnpm add ezmui
 ```
 
 ## 🔨 使用
@@ -26,70 +26,59 @@ pnpm add @mzui/components
 ### 完整引入
 
 ```typescript
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import MzUI from '@mzui/components'
-import '@mzui/components/dist/style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
+import MzUI from 'ezmui';
+import 'ezmui/dist/style.css';
+import App from './App.vue';
 
-const app = createApp(App)
-app.use(ElementPlus)
-app.use(MzUI)
-app.mount('#app')
+const app = createApp(App);
+app.use(ElementPlus);
+app.use(MzUI);
+app.mount('#app');
 ```
 
 ### 按需引入
 
 ```typescript
-import { MzTableView, MzFormControl } from '@mzui/components'
-import '@mzui/components/dist/style.css'
+import { MzTableView, MzFormControl } from 'ezmui';
+import 'ezmui/dist/style.css';
 ```
 
 ## 📚 组件列表
 
 ### MzTableView - 表格视图组件
+
 强大的表格组件，支持多种列类型、分页、筛选、排序等功能。
 
 ```vue
 <template>
-  <mz-table-view
-    :columns="columns"
-    :table-data="data"
-    :selection="true"
-    :row-btns="['edit', 'delete']"
-    :page-total="100"
-    @operation-event="handleOperation"
-  />
+    <mz-table-view :columns="columns" :table-data="data" :selection="true" :row-btns="['edit', 'delete']" :page-total="100" @operation-event="handleOperation" />
 </template>
 
 <script setup>
 const columns = [
-  { label: '姓名', prop: 'name', type: 'text' },
-  { label: '年龄', prop: 'age', type: 'text' },
-  { label: '状态', prop: 'status', type: 'tag' }
-]
+    { label: '姓名', prop: 'name', type: 'text' },
+    { label: '年龄', prop: 'age', type: 'text' },
+    { label: '状态', prop: 'status', type: 'tag' },
+];
 
-const data = [
-  { name: '张三', age: 28, status: '在职' }
-]
+const data = [{ name: '张三', age: 28, status: '在职' }];
 
 const handleOperation = (type, row) => {
-  console.log(type, row)
-}
+    console.log(type, row);
+};
 </script>
 ```
 
 ### MzFormControl - 表单控件组件
+
 灵活的表单组件，支持多种表单项类型。
 
 ```vue
 <template>
-  <mz-form-control
-    :form-data="formData"
-    :form-values="formValues"
-    @value-change="handleChange"
-  />
+    <mz-form-control :form-data="formData" :form-values="formValues" @value-change="handleChange" />
 </template>
 
 <script setup>
@@ -107,21 +96,27 @@ const handleChange = (data) => {
 ```
 
 ### MzContainerView - 容器视图组件
+
 提供统一的容器布局，支持顶部操作按钮和内容区域。
 
 ### MzDetailView - 详情视图组件
+
 用于展示详细信息的组件。
 
 ### MzFilterView - 筛选视图组件
+
 提供筛选功能的组件。
 
 ### MzFormView - 表单视图组件
+
 完整的表单视图解决方案。
 
 ### MzSearchTree - 搜索树组件
+
 带搜索功能的树形组件。
 
 ### MzIcons - 图标组件
+
 统一的图标组件。
 
 ## 🛠️ 开发
@@ -166,9 +161,9 @@ mz-ui/
 
 ## 🤝 依赖
 
-- Vue 3.x
-- Element Plus 2.x
-- Axios
+-   Vue 3.x
+-   Element Plus 2.x
+-   Axios
 
 ## 📄 License
 
@@ -176,7 +171,7 @@ MIT License
 
 ## 👨‍💻 作者
 
-Marco
+Marco Tang
 
 ---
 
