@@ -35,7 +35,7 @@ outline: deep
 1. **Fork 仓库**
 
 ```bash
-git clone https://github.com/your-username/mz-ui.git
+git clone https://github.com/marcoolTang/mz-ui.git
 cd mz-ui
 ```
 
