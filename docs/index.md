@@ -61,16 +61,15 @@ features:
 
 ```bash
 # 安装依赖
-npm install
+npm install ezmui
 
 # 引入组件
-import ContainerView from '@mz-ui/container-view'
-import '@mz-ui/container-view/style.css'
+import {ContainerView} from 'ezmui'
 ```
 
 ```vue
 <template>
-    <container-view :columns="config.columns" serviceName="user" primaryKey="id" :topBtns="topBtns" :rowBtns="rowBtns" />
+    <mz-container-view :columns="config.columns" serviceName="user" primaryKey="id" :topBtns="topBtns" :rowBtns="rowBtns" />
 </template>
 
 <script setup>
